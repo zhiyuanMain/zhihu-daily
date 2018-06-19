@@ -1,0 +1,16 @@
+{
+  "name": "zhihu-daily",
+  "version": "1.0.0",
+  "description": "zhihu-daily based on webpack and vue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --open --host 0.0.0.0 --port 8888 --config webpack.config.js"
+  },
+  "author": "h_xingzhiyuan@163.com",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^2.3.2",
+    "webpack-dev-server": "^2.4.2"
+  }
+}
