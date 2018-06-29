@@ -1,4 +1,5 @@
 var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var config = {
     entry: {
@@ -10,11 +11,19 @@ var config = {
         filename: 'index.js'
     },
     module: {
-        rules: [{
-            test: /\.css$/,
-            use: ['style-loader', 'css-loader']
-        }]
-    }
+        rules: [
+            {
+                test: /\.css$/,
+                use: ExtractTextPlugin.extract({
+                    use: 'css-loader',
+                    fallback: 'style-loader'
+                })
+            }
+        ]
+    },
+    plugins: [
+        new ExtractTextPlugin('index.css')
+    ]
 };
 
 module.exports = config;

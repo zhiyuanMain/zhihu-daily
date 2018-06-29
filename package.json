@@ -19,6 +19,7 @@
   "homepage": "https://github.com/zhiyuanMain/zhihu-daily#readme",
   "devDependencies": {
     "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^2.1.0",
     "style-loader": "^0.21.0",
     "webpack": "^2.3.2",
     "webpack-dev-server": "^2.4.2"
