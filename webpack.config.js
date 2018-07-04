@@ -1,6 +1,6 @@
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
+console.log(__dirname)
 var config = {
     entry: {
         main: './index'
@@ -11,8 +11,7 @@ var config = {
         filename: 'index.js'
     },
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.vue$/,
                 loader: 'vue-loader',
                 options: {
@@ -27,7 +26,7 @@ var config = {
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
-                exclude: /node_modules/  
+                exclude: /node_modules/
             },
             {
                 test: /\.css$/,
@@ -35,12 +34,27 @@ var config = {
                     use: 'css-loader',
                     fallback: 'style-loader'
                 })
+            },
+            {
+                test: /\.(gif|png|jpg|jpeg|woff|svg|ttf)\??.*$/,
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        limit: 102400
+                    }
+                }]
             }
         ]
     },
     plugins: [
         new ExtractTextPlugin('index.css')
-    ]
+    ],
+    resolve: {
+        alias: {
+            '@': require('path').resolve(__dirname, 'img') 
+        }
+    }
+   
 };
 
 module.exports = config;

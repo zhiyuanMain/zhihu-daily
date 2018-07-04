@@ -1,5 +1,7 @@
 <template>
     <div>
+        <p>app.vue img</p>
+        <img src="./img/test.jpg" class="img" />
         <vTitle></vTitle>
         <vCount v-model="count"></vCount>
         <p>app.vue count {{count}}</p>
@@ -27,5 +29,10 @@ export default {
     div {
         color: goldenrod;
         font-size: 18px;
+    }
+    img {
+        display: block;
+        width: 150px;
+        height: 150px;
     }
 </style>
