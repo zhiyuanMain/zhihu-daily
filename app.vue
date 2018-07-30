@@ -5,17 +5,21 @@
         <vTitle></vTitle>
         <vCount v-model="count"></vCount>
         <p>app.vue count {{count}}</p>
+        <br/>
+        <vAxios></vAxios>
     </div>
 </template>
 
 <script>
 import vTitle from './components/title.vue';
 import vCount from './components/count.vue';
+import vAxios from './components/axios.vue';
 export default {
   name: 'app',
   components: {
       vTitle,
-      vCount
+      vCount,
+      vAxios
   },
   data() {
     return {
